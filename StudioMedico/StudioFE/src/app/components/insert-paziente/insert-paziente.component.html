@@ -1,0 +1,78 @@
+<div class="col-md-10 p-5  offset-sm-1 text-center shadow-lg">
+    <h2>Inserisci nuovo paziente</h2>
+<form  (ngSubmit)="submitInsert()">
+    <div class="row shadow-lg col-12 m-auto mt-5 p-5">
+
+        <div class="form-group col-4 my-3">
+            <label>
+                <h5>Nome</h5>
+            </label>
+            <input type="text" class="form-control col-4" id="titolo" [(ngModel)]="paziente.nome" name="nome">
+        </div>
+
+        <div class="form-group col-4 my-3">
+            <label>
+                <h5>Cognome</h5>
+            </label>
+            <input type="text" class="form-control col-4" id="autore" [(ngModel)]="paziente.cognome" name="cognome">
+        </div>
+        <div class="form-group col-4 my-3">
+            <label>
+                <h5>Telefono</h5>
+            </label>
+            <input type="number" class="form-control col-4" id="anno" [(ngModel)]="paziente.telefono" name="telefono">
+        </div>
+
+        <div class="form-group col-6 my-3">
+            <label>
+                <h5>Email</h5> 
+            </label>
+            <input type="text" class="form-control col-4" id="prezzo" [(ngModel)]="paziente.email" name="email">
+        </div>
+        <div class="form-group col-6 my-3">
+            <label>
+                <h5>Data Nascita</h5>
+            </label>
+            <input type="date" class="form-control col-4" id="quantita" [(ngModel)]="paziente.dataNascita" name="dataNascita">
+        </div>
+
+
+        <div class="form-group col-6 my-3">
+            <label>
+                <h5>Codice Fiscale</h5>
+            </label>
+            <input type="text" class="form-control col-4" id="quantita" [(ngModel)]="paziente.codiceFiscale" name="codiceFiscale">
+        </div>
+
+         <div class="form-group col-6 my-3">
+            <label class="me-5">
+                <h5>Medico</h5>
+            </label>
+            <select [(ngModel)]="paziente.medico" name="medico" class="form-select" aria-label="Default select example">
+                <option  *ngFor="let medico of mediciList" [ngValue]="medico">{{medico.nome}} {{medico.cognome}}</option>
+            </select>
+        </div>
+        <!-- <div class="row">
+            <div class="container col-2 my-3 ms-5">
+                <div class="form-check ">
+                    <input class="form-check-input"[(ngModel)]="book.nuovo" [value]=1 type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                    <h5>Nuovo</h5>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" [(ngModel)]="book.nuovo" [value]=0 type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                    <h5>Usato</h5>
+                </div>
+            </div>
+           
+        </div> -->
+        <div class="container col-sm mt-4">
+            <button class="btn btn-primary">Inserisci</button>
+        </div>
+    </div>
+
+
+
+
+
+</form>
+</div>
