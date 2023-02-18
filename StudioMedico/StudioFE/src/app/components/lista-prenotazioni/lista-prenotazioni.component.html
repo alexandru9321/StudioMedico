@@ -1,0 +1,30 @@
+<table class="table mt-5 rounded ">
+    <thead>
+    <tr class="head shadow-lg">
+    <th>Data</th>
+    <th>Ora</th>
+    <th>Status</th>
+    <th>Note</th>
+    <th>Paziente</th>
+    <th>Medico</th>
+    
+    </tr>
+    </thead>
+    
+    <tbody>
+    <tr  class="body shadow-lg" *ngFor = "let prenotazione of prenotazioni">
+    <td>{{prenotazione.dataPrenotazione}}</td>
+    <td>{{prenotazione.oraPrenotazione}}</td>
+    <td>{{prenotazione.statusPrenotazione}}</td>
+    <td>{{prenotazione.note}}</td>
+    <td>{{prenotazione.paziente?.nome}} {{prenotazione.paziente?.cognome}}</td>
+    <td>{{prenotazione.medico?.nome}} {{prenotazione.medico?.cognome}}</td>
+  <!-- <button (click)="deletePaziente(paziente)" class="btn btn-danger">Elimina</button> -->
+    </tr>
+    
+    </tbody>
+    
+    
+    
+    </table>
+

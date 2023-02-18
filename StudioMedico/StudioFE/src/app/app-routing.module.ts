@@ -3,8 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { CercaPazienteComponent } from './components/cerca-paziente/cerca-paziente.component';
 import { HomeComponent } from './components/home/home.component';
 import { InsertPazienteComponent } from './components/insert-paziente/insert-paziente.component';
+import { InsertPrenotazioneComponent } from './components/insert-prenotazione/insert-prenotazione.component';
 import { ListaMediciComponent } from './components/lista-medici/lista-medici.component';
 import { ListaPazientiComponent } from './components/lista-pazienti/lista-pazienti.component';
+import { ListaPrenotazioniComponent } from './components/lista-prenotazioni/lista-prenotazioni.component';
 import { SegreteriaComponent } from './components/segreteria/segreteria.component';
 import { MedicoComponent } from './medico/medico.component';
 import { PazienteComponent } from './paziente/paziente.component';
@@ -16,7 +18,9 @@ const routes: Routes = [
   { path: 'medico', component: MedicoComponent },
   { path: 'listaPazienti', component: ListaPazientiComponent },
   { path: 'listaMedici', component: ListaMediciComponent },
+  { path: 'listaPrenotazioni', component: ListaPrenotazioniComponent },
   { path: 'insertPaziente', component: InsertPazienteComponent },
+  { path: 'insertPrenotazione', component: InsertPrenotazioneComponent },
   { path: 'searchPaziente', component: CercaPazienteComponent }
 ];
 

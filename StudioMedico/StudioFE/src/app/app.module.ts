@@ -15,6 +15,8 @@ import { ListaMediciComponent } from './components/lista-medici/lista-medici.com
 import { CercaPazienteComponent } from './components/cerca-paziente/cerca-paziente.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
+import { InsertPrenotazioneComponent } from './components/insert-prenotazione/insert-prenotazione.component';
+import { ListaPrenotazioniComponent } from './components/lista-prenotazioni/lista-prenotazioni.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { HomeComponent } from './components/home/home.component';
     InsertPazienteComponent,
     ListaMediciComponent,
     CercaPazienteComponent,
-    HomeComponent
+    HomeComponent,
+    InsertPrenotazioneComponent,
+    ListaPrenotazioniComponent
   ],
   imports: [
     BrowserModule,
