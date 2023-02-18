@@ -1,76 +1,88 @@
 <div class="container p-5">
     <h2 class="text-center">Ricerca Paziente</h2>
 
-    <div class="container col-12 mt-5 text-center">
-        <form (ngSubmit)="submitByNomeECognome()">
-        <div class="row">
+    <div class="container shadow-lg col-12 mt-5 p-3 text-center">
+        <form (ngSubmit)="submitByAll()">
+            <div class="row ">
+
+                <div class="col ">
+
+                    <h4> Nome </h4>
+                    <input type="text" [(ngModel)]="nome" name="nome" class="form-control"
+                        placeholder="Inserisci nome...">
+                </div>
+
+                <div class="col ">
+                    <h4> Cognome </h4>
+                    <input type="text" [(ngModel)]="cognome" name="cognome" class="form-control"
+                        placeholder="Inserisci cognome...">
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col mt-5">
+
+                    <h4> Codice Fiscale </h4>
+                    <input type="text" [(ngModel)]="nome" name="nome" class="form-control"
+                        placeholder="Inserisci nome...">
+                </div>
+
+                <div class="mt-5 col">
+                    <h4> Medico </h4>
+                    <select [(ngModel)]="idMedico" name="medico" class="form-select"
+                        aria-label="Default select example">
+                        <option *ngFor="let medico of mediciList" [ngValue]="medico">{{medico.nome}} {{medico.cognome}}
+                        </option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="row m-auto">
+                <button class="btn btn-primary mt-5 m-auto col-2" type="submit">Cerca paziente</button>
+
+            </div>
+
             
-            <div class="col">
-                
-                <label> Nome </label>
-                <input type="text" [(ngModel)]="nome" name="nome" class="form-control"
-                    placeholder="Inserisci titolo...">
-            </div>
-            <div class="col">
-                <label> Autore </label>
-                <input type="text" [(ngModel)]="cognome" name="cognome" class="form-control"
-                    placeholder="Inserisci autore...">
-            </div>
-            <!-- <div class="col">
-                <label>Categoria</label>
-                <select class="col-6 " [(ngModel)]="category" name="category" class="form-select"
-                    aria-label="Default select example">
-                    <option *ngFor="let cat of categoryList" [value]="cat.id">{{cat.descrizione}}</option>
-                </select>
-            </div>
-            <div class="col">
-                <label for="">Nuovo</label>
-                <select name="nuovo" [(ngModel)]="nuovo" class="form-select" id="nuovo" required>
-                    <option selected [value]="null">Tutti</option>
-                    <option [value]="1">Si</option>
-                    <option [value]="0">No</option>
-                </select>
-           
-            </div> -->
-            <button class="btn btn-primary mt-4 col-2" type="submit">Cerca paziente</button>
-          </div>
         </form>
-       
 
-
-            <div class="container text-center mt-5" *ngIf="show">
-                <h3>Risultati ricerca :</h3>
-                <table class="table table-dark">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Titolo</th>
-                            <th>Autore</th>
-                            <th>Anno</th>
-                            <th>Nuovo</th>
-                            <th>Categoria</th>
-                            <th>Prezzo</th>
-                            <th>Quantita</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let paziente of pazientiList">
-                            <td>{{paziente.id}}</td>
-    <td>{{paziente.nome}}</td>
-    <td>{{paziente.cognome}}</td>
-    <td>{{paziente.telefono}}</td>
-    <td>{{paziente.email}}</td>
-    <td>{{paziente.dataNascita}}</td>
-    <td>{{paziente.codiceFiscale}}</td>
-    <td>{{paziente.medico?.nome}}  {{paziente.medico?.cognome}}</td>
-
-                        </tr>
-
-                    </tbody>
+        <div class="row m-auto">
 
 
 
-                </table>
-            </div>
+        <div class="container text-center mt-5" *ngIf="show">
+            <h3>Risultati ricerca :</h3>
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Titolo</th>
+                        <th>Autore</th>
+                        <th>Anno</th>
+                        <th>Nuovo</th>
+                        <th>Categoria</th>
+                        <th>Prezzo</th>
+                        <th>Quantita</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let paziente of pazienti">
+                        <td>{{paziente.id}}</td>
+                        <td>{{paziente.nome}}</td>
+                        <td>{{paziente.cognome}}</td>
+                        <td>{{paziente.telefono}}</td>
+                        <td>{{paziente.email}}</td>
+                        <td>{{paziente.dataNascita}}</td>
+                        <td>{{paziente.codiceFiscale}}</td>
+                        <td>{{paziente.medico?.nome}} {{paziente.medico?.cognome}}</td>
 
+                    </tr>
+
+                </tbody>
+
+
+
+            </table>
         </div>
+
+
+    </div>

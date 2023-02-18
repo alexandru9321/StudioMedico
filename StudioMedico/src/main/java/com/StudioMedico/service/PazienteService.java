@@ -29,6 +29,11 @@ public class PazienteService {
         return pazientiList;
     }
 
+    public void deleteById(Paziente paziente){
+        int id = paziente.getId();
+        pazienteRepository.deleteById(id);
+    }
+
 
     public Prenotazione richiediPrenotazione(int idPaziente, LocalDateTime dataOraPrenotazione) {
         Prenotazione prenotazione = new Prenotazione();
@@ -39,8 +44,6 @@ public class PazienteService {
         prenotazione.setOraPrenotazione(ora);
         return prenotazione;
     }
-
-
 
 
     // Ricerca per un parametro

@@ -1,7 +1,6 @@
-<button class="btn btn-dark m-5" (click)="goBack()">Indietro</button>
-<table class="table table-dark rounded ">
+<table class="table mt-5 rounded ">
     <thead>
-    <tr>
+    <tr class="head shadow-lg">
     <th>ID</th>
     <th>Nome</th>
     <th>Cognome</th>
@@ -15,7 +14,7 @@
     </thead>
     
     <tbody>
-    <tr *ngFor = "let paziente of pazientiList">
+    <tr  class="body shadow-lg" *ngFor = "let paziente of pazientiList">
     <td>{{paziente.id}}</td>
     <td>{{paziente.nome}}</td>
     <td>{{paziente.cognome}}</td>
@@ -24,7 +23,7 @@
     <td>{{paziente.dataNascita}}</td>
     <td>{{paziente.codiceFiscale}}</td>
     <td>{{paziente.medico?.nome}}  {{paziente.medico?.cognome}}</td>
-    <button class="btn btn-danger">Elimina</button>
+    <button (click)="deletePaziente(paziente)" class="btn btn-danger">Elimina</button>
     </tr>
     
     </tbody>

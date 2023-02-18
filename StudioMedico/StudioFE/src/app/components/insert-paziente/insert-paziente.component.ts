@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Medico } from 'src/app/models/Medico';
 import { Paziente } from 'src/app/models/Paziente';
 import { MedicoService } from 'src/app/services/medico.service';
@@ -13,9 +14,10 @@ export class InsertPazienteComponent implements OnInit {
 
   paziente: Paziente = new Paziente();
   mediciList!: Medico[];
+  success: boolean = false;
 
   constructor(private pazienteService: PazienteService,
-    private medicoService: MedicoService) {}
+    private medicoService: MedicoService, private router: Router) {}
 
 
   ngOnInit(): void {
@@ -30,6 +32,7 @@ export class InsertPazienteComponent implements OnInit {
   submitInsert(){
     console.log(this.paziente);
     this.InsertPaziente();
+    this.router.navigate(['/segretaria'])
   }
 
   getAllMedici(){
@@ -49,5 +52,7 @@ export class InsertPazienteComponent implements OnInit {
     },
     error => console.log(error));
   }
+
+
 
 }

@@ -1,0 +1,9 @@
+.btn:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.btn h5{
+    font-size: 30px;
+}
+.btn:hover h5{
+    color: rgb(221, 243, 252);
+}

@@ -30,4 +30,25 @@ constructor(private pazienteService: PazienteService, private location: Location
     this.location.back();
   }
 
+  // deletePaziente(paziente: Paziente) {
+  //   console.log(paziente.nome)
+  //   this.pazienteService.delete(paziente).subscribe(
+  //     response => {
+  //       console.log("L'utente " + paziente.nome + "e stato eliminato!");
+  //     }
+  //   )
+  // }
+
+  deletePaziente(paziente: Paziente) {
+    this.pazienteService.delete(paziente).subscribe(
+      () => {
+        // Rimuovi il paziente dalla lista
+        const index = this.pazientiList.indexOf(paziente);
+        if (index > -1) {
+          this.pazientiList.splice(index, 1);
+        }
+      },
+      error => console.error(error)
+    );
+  }
 }
